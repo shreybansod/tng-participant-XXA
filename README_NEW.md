@@ -99,11 +99,11 @@ This repository contains the template for building [onboarding](https://github.c
 - Add the GPG key to your GitHub account.
 	> Please refer [Adding GPG key to repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.3.full-video.v2.mp4)  video for reference
 
-	-- Go to Github profile -> Settings
-	-- Go to SSH and GPG Keys
-	-- Click on New GPG Key
-	-- Add Title. Add key copied in last step
-	-- Click on Add GPG Key
+	- Go to Github profile -> Settings
+	- Go to SSH and GPG Keys
+	- Click on New GPG Key
+	- Add Title. Add key copied in last step
+	- Click on Add GPG Key
 
 5. Fill in content for your country
 	>   for DEV and UAT environments you may use the conf files and the  [certgen bash script](https://github.com/WorldHealthOrganization/tng-participant-template/blob/main/scripts/certgen/gen_all_certs.sh)  as a guideline according to the  [Certificate Preparation](https://github.com/WorldHealthOrganization/tng-participant-template/blob/main/scripts/certgen/README.md)
