@@ -210,11 +210,11 @@ This guide follows the certificate templates defined in the certificate governan
 	extendedKeyUsage = 1.3.6.1.4.1.1847.2021.1.1,1.3.6.1.4.1.1847.2021.1.2,1.3.6.1.4.1.1847.2021.1.3
 	```
 	It is recommended that a SCA provides certificate revocation lists. Therefore, replace the crlDistributionPoints URI with the information for your jurisdiction.
-The extendedKeyUsage field is optional and can be used to further restrict the DSC certificate as follows:
-Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value
-extendedKeyUsage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3.6.1.4.1.1847.2021.1.1 for Test Issuers
-extendedKeyUsage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3.6.1.4.1.1847.2021.1.2 for Vacination Issuers
-extendedKeyUsage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3.6.1.4.1.1847.2021.1.3 for Recovery Issuers
+The extendedKeyUsage field is optional and can be used to further restrict the DSC certificate as follows:\
+**Field** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **Value**\
+extendedKeyUsage &emsp; 1.3.6.1.4.1.1847.2021.1.1 for Test Issuers\
+extendedKeyUsage &emsp; 1.3.6.1.4.1.1847.2021.1.2 for Vacination Issuers\
+extendedKeyUsage &emsp; 1.3.6.1.4.1.1847.2021.1.3 for Recovery Issuers\
 The above example contains all three extended key usages.
 
 	*Create a certificate signing request (CSR)*
