@@ -3,12 +3,15 @@ This repository contains the template for building [onboarding](https://github.c
 
 ##  Prerequisites
 
-**Create an private git repository on github. One for each Environment**
+**Create an private git repository on github. One for each Environment (DEV, UAT, PROD)**
+
+> Please refer [Create private repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/2.1.and2.3.full-video.v2.mp4) video for reference
 - From Github profile, go to repositories
 - Click on New
 - Enter Repository name, follow the convention, it has to contain the ISO 3 letter. All the rest is optional
 - Click on Create Repository
 
+ 
 **Create PAT (Personal Access Token) for Github account if not created already**
 - Go to Github profile -> Settings
 - Go to Developers Settings -> Personal Access Tokens -> Tokens (Classic)
@@ -20,20 +23,26 @@ This repository contains the template for building [onboarding](https://github.c
 
 1. Go to local repo
 2. Clone the new Github repo in your local repo
-- git clone https://(your account PAT)@github.com/(your account or organization)/(repo).git
-- cd (repo)
-- git remote add template-repo https://github.com/WorldHealthOrganization/tng-participant-template.git
-- git pull template-repo main
+
+	```
+	- git clone https://(your account PAT)@github.com/(your account or organization)/(repo).git
+	- cd (repo)
+	- git remote add template-repo https://github.com/WorldHealthOrganization/tng-participant-template.git
+	- git pull template-repo main
+	```
 
 3. Add tng-bot to new repository
+	> Please refer [Invite tng-bot to private repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/2.2.full-video.v2.mp4) video for reference
 - Go to Github profile -> Settings
 - Go to Collaborators
 - Authenticate
 - Click on Add people
 - Add tng-bot for Prod and tng-bot-dev for dev and UAT
 
+
 4. Create GPG Keys for responsible persons for each environment
-> Note: Before generating a new GPG key, make sure you've verified your email address. If you haven't verified your email address, you won't be able to sign commits and tags with GPG.
+	> Note: Before generating a new GPG key, make sure you've verified your email address. If you haven't verified your email address, you won't be able to sign commits and tags with GPG.
+	> Please refer [GPG key Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.2.full-video.v2.mp4)  video for reference
 - Download and install the GPG command line tools for your operating system. We generally recommend installing the latest version for your operating system.
 - Open Git Bash
 - Generate a GPG key pair. Since there are multiple versions of GPG, you may need to consult the relevant man page to find the appropriate key generation command
@@ -88,11 +97,13 @@ This repository contains the template for building [onboarding](https://github.c
 	```
 - Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----.
 - Add the GPG key to your GitHub account.
--- Go to Github profile -> Settings
--- Go to SSH and GPG Keys
--- Click on New GPG Key
--- Add Title. Add key copied in last step
--- Click on Add GPG Key
+	> Please refer [Adding GPG key to repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.3.full-video.v2.mp4)  video for reference
+
+	-- Go to Github profile -> Settings
+	-- Go to SSH and GPG Keys
+	-- Click on New GPG Key
+	-- Add Title. Add key copied in last step
+	-- Click on Add GPG Key
 
 5. Fill in content for your country
 	>   for DEV and UAT environments you may use the conf files and the  [certgen bash script](https://github.com/WorldHealthOrganization/tng-participant-template/blob/main/scripts/certgen/gen_all_certs.sh)  as a guideline according to the  [Certificate Preparation](https://github.com/WorldHealthOrganization/tng-participant-template/blob/main/scripts/certgen/README.md)
@@ -130,11 +141,9 @@ This repository contains the template for building [onboarding](https://github.c
 	```
 		Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
 	```	
-		## Prepare Folders
+	## Prepare Folders
 
-	[](https://github.com/WorldHealthOrganization/tng-participant-template/blob/main/scripts/certgen/README.md#prepare-folders)
-
-	Note: keep your private keys safe and secure. Do not share them with anyone.
+	**Note**: keep your private keys safe and secure. Do not share them with anyone.
 
 	Copy the generated certificates to the respective folders and change the file names to match the naming convention. For the case of self-signed TLS certificates, the CA.pem is just a copy of the TLS.pem (check to have keyCertSign in the keyUsage). The CA.pem should exist, since it is used to verify the TLS client certificate when connecting to the TNG application.
 
@@ -155,10 +164,12 @@ This repository contains the template for building [onboarding](https://github.c
 **Concepts Certificate Preparation**
 This guide follows the certificate templates defined in the certificate governance. Public Key Certificates generated by following this guide will include the minimal required fields - further fields can be added in the configuration files if needed.
 
-	Elliptic Curve Public Key Certificates (ECDSA with NIST-p-256)
-SCA certificate (TNPSCA) generation example:
-sca.conf
-Create a new file called sca.conf and replace the dn entries with your jurisdiction’s details.	
+	### Elliptic Curve Public Key Certificates (ECDSA with NIST-p-256)
+	#### SCA certificate (TNP~SCA~) generation example:
+	> Please refer [SCA Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.1.full-video.SCA.v2.mp4) video  for reference
+
+	##### sca.conf
+	Create a new file called sca.conf and replace the dn entries with your jurisdiction’s details.	
 	```
 	[req]
 	prompt = no
@@ -183,10 +194,12 @@ Create a new file called sca.conf and replace the dn entries with your jurisdict
 	```
 	openssl req -x509 -new -days 1461 -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout CAprivkey.key -nodes -out CAcert.pem -config sca.conf
 	```
-	*DSC generation example*
+	#### DSC generation example
 	Document Signer Certificates (DSCs) must be signed by the SCA. Hence, you have to create the SCA certificate (with the corresponding private key) before you can issue DSCs.
 
-	DSC.conf
+	##### DSC.conf
+	> Please refer [DSC generation and deletion](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/3.2.and3.3.full-video.v2.mp4)  video for reference
+	
 	Create a new file called DSC.conf in the folder where your CA’s private key is located and add the following fields:
 	```
 	[ext]
@@ -218,6 +231,8 @@ The above example contains all three extended key usages.
 	```
 	#### TNP~UP~  generation example
 	##### uploadCert.conf
+	> Please refer [UP Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.1.full-video.UP.v2.mp4)  video for reference
+	
 	Create a new file called _uploadCert.conf_ and replace the dn entries with your jurisdiction’s details.
 	```
 	[req]
@@ -243,6 +258,8 @@ The above example contains all three extended key usages.
 	```
 	#### TNP~TLS~  generation example
 	##### TLSClient.conf
+	> Please refer  [TLS Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.1.full-video.TLS.v2.mp4) video for reference 
+	
 	Create a new file called _TLSClient.conf_ and replace the dn entries with your jurisdiction’s details.
 	```
 	[req]
@@ -346,7 +363,9 @@ Please be aware that RSA is NOT RECOMMENDED for the DSC and if you want to use R
 	notAfter                = IMPLICIT:1,GENERALIZEDTIME:$ENV::DS_PRIV_KEY_END
 	```
 6. **Signing Your Work**
-Git is cryptographically secure, but it’s not foolproof. If you’re taking work from others on the internet and want to verify that commits are actually from a trusted source, Git has a few ways to sign and verify work using GPG.
+	> Please refer  [Signing (tag) certificates](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/2.4.full-video.v2.mp4) video for reference
+
+	Git is cryptographically secure, but it’s not foolproof. If you’re taking work from others on the internet and want to verify that commits are actually from a trusted source, Git has a few ways to sign and verify work using GPG.
 
 	First of all, if you want to sign anything you need to get GPG configured and your personal key installed.
 	```
@@ -492,6 +511,15 @@ Git is cryptographically secure, but it’s not foolproof. If you’re taking wo
 	```
 	### Everyone Must Sign
 	Signing tags and commits is great, but if you decide to use this in your normal workflow, you’ll have to make sure that everyone on your team understands how to do so. This can be achieved by asking everyone working with the repository to run git config --local commit.gpgsign true to automatically have all of their commits in the repository signed by default. If you don’t, you’ll end up spending a lot of time helping people figure out how to rewrite their commits with signed versions. Make sure you understand GPG and the benefits of signing things before adopting this as part of your standard workflow.
-7. Send an onboarding/participation request to gdhcn-support@who.int which contains:
+7. Validating the certificates
+	> Please refer [Testing connection](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/3.1.full-video.v2.mp4)  video for reference
+
+	Use the following command to verify the certificates by testing the connection.
+	```
+	curl -v https://tng-dev.who.int/trustList --cert TLS.pem --key TLS.key
+	```
+
+8. Send an onboarding/participation request to gdhcn-support@who.int which contains:
 - URL of the private repository created as a prerequisite
 - The GPG key exported in Step 4
+  
