@@ -5,7 +5,7 @@ This repository contains the template for building [onboarding](https://github.c
 
 **Create an private git repository on github. One for each Environment (DEV, UAT, PROD)**
 
-> Please refer [Create private repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/2.1.and2.3.full-video.v2.mp4) video for reference
+> Please check [Create private repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/2.1.and2.3.full-video.v2.mp4) video for reference
 - From Github profile, go to repositories
 - Click on New
 - Enter Repository name, follow the convention, it has to contain the ISO 3 letter. All the rest is optional
@@ -32,7 +32,7 @@ This repository contains the template for building [onboarding](https://github.c
 	```
 
 3. Add tng-bot to new repository
-	> Please refer [Invite tng-bot to private repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/2.2.full-video.v2.mp4) video for reference
+	> Please check [Invite tng-bot to private repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/2.2.full-video.v2.mp4) video for reference
 - Go to Github profile -> Settings
 - Go to Collaborators
 - Authenticate
@@ -42,7 +42,7 @@ This repository contains the template for building [onboarding](https://github.c
 
 4. Create GPG Keys for responsible persons for each environment
 	> Note: Before generating a new GPG key, make sure you've verified your email address. If you haven't verified your email address, you won't be able to sign commits and tags with GPG.
-	> Please refer [GPG key Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.2.full-video.v2.mp4)  video for reference
+	> Please check [GPG key Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.2.full-video.v2.mp4)  video for reference
 - Download and install the GPG command line tools for your operating system. We generally recommend installing the latest version for your operating system.
 - Open Git Bash
 - Generate a GPG key pair. Since there are multiple versions of GPG, you may need to consult the relevant man page to find the appropriate key generation command
@@ -97,7 +97,7 @@ This repository contains the template for building [onboarding](https://github.c
 	```
 - Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----.
 - Add the GPG key to your GitHub account.
-	> Please refer [Adding GPG key to repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.3.full-video.v2.mp4)  video for reference
+	> Please check [Adding GPG key to repository](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.3.full-video.v2.mp4)  video for reference
 
 	- Go to Github profile -> Settings
 	- Go to SSH and GPG Keys
@@ -166,7 +166,7 @@ This guide follows the certificate templates defined in the certificate governan
 
 	### Elliptic Curve Public Key Certificates (ECDSA with NIST-p-256)
 	#### SCA certificate (TNP~SCA~) generation example:
-	> Please refer [SCA Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.1.full-video.SCA.v2.mp4) video  for reference
+	> Please check [SCA Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.1.full-video.SCA.v2.mp4) video  for reference
 
 	##### sca.conf
 	Create a new file called sca.conf and replace the dn entries with your jurisdiction’s details.	
@@ -198,7 +198,7 @@ This guide follows the certificate templates defined in the certificate governan
 	Document Signer Certificates (DSCs) must be signed by the SCA. Hence, you have to create the SCA certificate (with the corresponding private key) before you can issue DSCs.
 
 	##### DSC.conf
-	> Please refer [DSC generation and deletion](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/3.2.and3.3.full-video.v2.mp4)  video for reference
+	> Please check [DSC generation and deletion](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/3.2.and3.3.full-video.v2.mp4)  video for reference
 	
 	Create a new file called DSC.conf in the folder where your CA’s private key is located and add the following fields:
 	```
@@ -231,7 +231,7 @@ The above example contains all three extended key usages.
 	```
 	#### TNP~UP~  generation example
 	##### uploadCert.conf
-	> Please refer [UP Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.1.full-video.UP.v2.mp4)  video for reference
+	> Please check [UP Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.1.full-video.UP.v2.mp4)  video for reference
 	
 	Create a new file called _uploadCert.conf_ and replace the dn entries with your jurisdiction’s details.
 	```
@@ -258,7 +258,7 @@ The above example contains all three extended key usages.
 	```
 	#### TNP~TLS~  generation example
 	##### TLSClient.conf
-	> Please refer  [TLS Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.1.full-video.TLS.v2.mp4) video for reference 
+	> Please check  [TLS Creation](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/1.1.full-video.TLS.v2.mp4) video for reference 
 	
 	Create a new file called _TLSClient.conf_ and replace the dn entries with your jurisdiction’s details.
 	```
@@ -363,7 +363,7 @@ Please be aware that RSA is NOT RECOMMENDED for the DSC and if you want to use R
 	notAfter                = IMPLICIT:1,GENERALIZEDTIME:$ENV::DS_PRIV_KEY_END
 	```
 6. **Signing Your Work**
-	> Please refer  [Signing (tag) certificates](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/2.4.full-video.v2.mp4) video for reference
+	> Please check  [Signing (tag) certificates](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/2.4.full-video.v2.mp4) video for reference
 
 	Git is cryptographically secure, but it’s not foolproof. If you’re taking work from others on the internet and want to verify that commits are actually from a trusted source, Git has a few ways to sign and verify work using GPG.
 
@@ -512,7 +512,7 @@ Please be aware that RSA is NOT RECOMMENDED for the DSC and if you want to use R
 	### Everyone Must Sign
 	Signing tags and commits is great, but if you decide to use this in your normal workflow, you’ll have to make sure that everyone on your team understands how to do so. This can be achieved by asking everyone working with the repository to run git config --local commit.gpgsign true to automatically have all of their commits in the repository signed by default. If you don’t, you’ll end up spending a lot of time helping people figure out how to rewrite their commits with signed versions. Make sure you understand GPG and the benefits of signing things before adopting this as part of your standard workflow.
 7. Validating the certificates
-	> Please refer [Testing connection](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/3.1.full-video.v2.mp4)  video for reference
+	> Please check [Testing connection](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/3.1.full-video.v2.mp4)  video for reference
 
 	Use the following command to verify the certificates by testing the connection.
 	```
