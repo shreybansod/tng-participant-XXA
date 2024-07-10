@@ -19,7 +19,7 @@ This repository contains the template for building [onboarding](https://github.c
 - Go to Developers Settings -> Personal Access Tokens -> Tokens (Classic)
 - Click on Generate New Token button (Generate New Token classic)
 - Use Authentication code
-- Add Note, Expiration and scope and click ‘Generate Token’
+- Add Note, Expiration, 'Repo' as a scope and click ‘Generate Token’
 
 ## Onboarding process
 
