@@ -1,6 +1,8 @@
 # Introduction 
 This repository contains the template for building [onboarding](https://github.com/WorldHealthOrganization/smart-trust/blob/main/input/pagecontent/concepts_onboarding.md) informations for the Smart Trust Network Attendees. This includes CSCAs, Auth information, signing information and other relevant files for onboarding a participant.
 
+
+
 ##  Prerequisites
 
 **Create an private git repository on github. One for each Environment (DEV, UAT, PROD)**
@@ -19,7 +21,7 @@ This repository contains the template for building [onboarding](https://github.c
 - Use Authentication code
 - Add Note, Expiration and scope and click ‘Generate Token’
 
-## Steps
+## Onboarding process
 
 1. Go to local repo
 2. Clone the new Github repo in your local repo
@@ -509,7 +511,7 @@ Please be aware that RSA is NOT RECOMMENDED for the DSC and if you want to use R
 	 README | 2 ++
 	 1 file changed, 2 insertions(+)
 	```
-	### Everyone Must Sign
+	### Everyone Must Sign - Always a good idea
 	Signing tags and commits is great, but if you decide to use this in your normal workflow, you’ll have to make sure that everyone on your team understands how to do so. This can be achieved by asking everyone working with the repository to run git config --local commit.gpgsign true to automatically have all of their commits in the repository signed by default. If you don’t, you’ll end up spending a lot of time helping people figure out how to rewrite their commits with signed versions. Make sure you understand GPG and the benefits of signing things before adopting this as part of your standard workflow.
 7. Validating the certificates
 	> Please check [Testing connection](https://github.com/WorldHealthOrganization/smart-trust/releases/download/v1.1.1/3.1.full-video.v2.mp4)  video for reference
